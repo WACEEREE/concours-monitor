@@ -17,7 +17,11 @@ first_run = True
 
 while True:
     print("جاري الفحص...")
+    print("Testing website...")
 
+r = requests.get(URL, timeout=20, verify=False)
+
+print(r.status_code)
     html = requests.get(URL, verify=False).text
     soup = BeautifulSoup(html, "html.parser")
 
