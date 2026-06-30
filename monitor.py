@@ -5,8 +5,10 @@ import time
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-TOKEN = "8788275730:AAHcUEILxqypngK_-Ojfvv75x1ctUm36KcE"
-CHAT_ID = "1704738927"
+import os
+
+TOKEN = os.environ["BOT_TOKEN"]
+CHAT_ID = os.environ["CHAT_ID"]
 
 URL = "https://drh.sante.gov.ma/Pages/Concours_Ex_D_ParaMedical_D.aspx"
 
