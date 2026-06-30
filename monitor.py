@@ -17,12 +17,17 @@ first_run = True
 
 while True:
     print("جاري الفحص...")
-    print("Testing website...")
+    
+headers = {
+    "User-Agent": "Mozilla/5.0"
+}
 
-r = requests.get(URL, timeout=20, verify=False)
-
-print(r.status_code)
-    html = requests.get(URL, verify=False).text
+html = requests.get(
+    URL,
+    headers=headers,
+    timeout=30,
+    verify=False
+).text
     soup = BeautifulSoup(html, "html.parser")
 
     for a in soup.find_all("a", href=True):
